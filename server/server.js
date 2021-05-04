@@ -18,14 +18,14 @@ var players = new Players();
 //Mongodb setup
 var MongoClient = require('mongodb').MongoClient;
 var mongoose = require('mongoose');
-var url = "mongodb://localhost:27017/";
+var url = "mongodb://todoAppUser:0024882aaa@cluster0-shard-00-00.m1hmo.mongodb.net:27017,cluster0-shard-00-01.m1hmo.mongodb.net:27017,cluster0-shard-00-02.m1hmo.mongodb.net:27017/Setream?ssl=true&replicaSet=atlas-tj1li7-shard-0&authSource=admin&retryWrites=true&w=majority";
 
 
 
 app.use(express.static(publicPath));
 
 //Starting server on port 3000
-server.listen(3000, () => {
+server.listen(process.env.PORT || 3000, () => {
     console.log("Server started on port 3000");
 });
 
